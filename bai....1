@@ -1,0 +1,16 @@
+int sumEvenRecursive(int arr[], int n)
+{
+    // Base case: empty array
+    if (n == 0) {
+        return 0;
+    }
+    
+    // Recursive case: non-empty array
+    if (arr[0] % 2 == 0) {
+        // If the first element is even, add it to the sum of the rest of the array
+        return arr[0] + sumEvenRecursive(arr + 1, n - 1);
+    } else {
+        // If the first element is odd, skip it and find the sum of the rest of the array
+        return sumEvenRecursive(arr + 1, n - 1);
+    }
+}
