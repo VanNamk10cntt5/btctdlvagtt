@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+double S(double x, int n) {
+    if (n == 1) {
+        return x;
+    } else {
+        return S(x, n-1) + pow(x, n)/factorial(n);
+    }
+}
+
+int factorial(int n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n-1);
+    }
+}
+
+int main() {
+    double x;
+    int n;
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter n: ";
+    cin >> n;
+    double result = S(x, n);
+    cout << "S(" << x << ", " << n << ") = " << result << endl;
+    return 0;
+}
